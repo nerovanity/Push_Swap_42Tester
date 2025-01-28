@@ -17,10 +17,18 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
 
-echo "Select the number of elements to test (3, 4, 5, 100, 500):"
+echo "Select the number of elements to test (1-Custom number, 3, 4, 5, 100, 500):"
 read count
 
-if [ "$count" -eq 100 ] || [ "$count" -eq 500 ]; then
+if [ "$count" -eq 1 ]; then
+    echo "Type the number of elements:"
+    read count
+    if [ "$count" -ge 100 ]; then
+        echo "Please choose between 6 and 99"
+    fi
+fi
+
+if [[ "$count" -gt 5 && "$count" -le 100 ]] || [ "$count" -eq 500 ]; then
     echo "Select the number of tests:"
     read loops
 fi
@@ -95,7 +103,7 @@ run_tests() {
 
 if [ "$count" -le 5 ]; then
     run_tests $count 1
-elif [ "$count" -eq 100 ] || [ "$count" -eq 500 ]; then
+elif [[ "$count" -gt 5 && "$count" -le 100 ]] || [ "$count" -eq 500 ]; then
     run_tests $count $loops
 else
     echo "Invalid option. Please select 3, 4, 5, 100, or 500."

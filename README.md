@@ -25,13 +25,13 @@ This repository contains a script to test the `push_swap` program with various p
     ./test.sh
     ```
 
-4. **Select the number of elements to test** (3, 4, 5, 100, 500) when prompted.
+4. **Select the number of elements to test** (1-Custom number, 3, 4, 5, 100, 500) when prompted.
 
 ## Description
 
 The script performs the following steps:
 
-1. **Generate Numbers**: Depending on the user's input, it generates permutations for small sets (3, 4, 5) or random numbers for larger sets (100, 500).
+1. **Generate Numbers**: Depending on the user's input, it generates permutations for small sets (3, 4, 5) or random numbers for larger sets (between 6 and 100, 500).
 2. **Run Tests**: For small sets, it runs a single test. For larger sets, it runs three tests with different random numbers.
 3. **Check Results**: It runs the `push_swap` and `checker` programs, counts the number of moves, and verifies the results.
 4. **Memory Leak Check**: It uses `valgrind` to check for memory leaks.
@@ -47,7 +47,7 @@ The script performs the following steps:
 
 ## Example Output
 ```diff
-Select the number of elements to test (3, 4, 5, 100, 500):
+Select the number of elements to test (1-Custom number, 3, 4, 5, 100, 500):
 100
 Select the number of tests:
 3

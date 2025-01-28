@@ -69,3 +69,8 @@ All tests passed
 
 - Ensure that the `push_swap` and `checker` executables are correctly implemented and accessible in the script directory.
 - The move limits are based on typical constraints for the `push_swap` project and may need adjustment based on specific requirements.
+
+# Contributors
+
+I would like to thank the following contributor for their contributions to this repository:
+[@Charafeddine](https://github.com/Charaf3334)
